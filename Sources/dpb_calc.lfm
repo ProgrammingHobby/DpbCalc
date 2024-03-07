@@ -1,0 +1,693 @@
+object formDpbCalc: TformDpbCalc
+  Left = 1520
+  Height = 287
+  Top = 250
+  Width = 513
+  AutoSize = True
+  Caption = 'CP/M Disk Parameter Block Calculator'
+  ClientHeight = 287
+  ClientWidth = 513
+  Font.Height = -13
+  Font.Name = 'Monospace'
+  OnShow = FormShow
+  object panelDiskDefs: TPanel
+    Left = 0
+    Height = 77
+    Top = 0
+    Width = 513
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    BorderWidth = 5
+    ChildSizing.LeftRightSpacing = 4
+    ChildSizing.TopBottomSpacing = 4
+    ChildSizing.HorizontalSpacing = 8
+    ChildSizing.VerticalSpacing = 4
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 3
+    ClientHeight = 77
+    ClientWidth = 513
+    TabOrder = 0
+    object panelSecLen: TPanel
+      Left = 4
+      Height = 33
+      Top = 4
+      Width = 190
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 33
+      ClientWidth = 190
+      TabOrder = 1
+      object labelSecLen: TLabel
+        Left = 0
+        Height = 33
+        Top = 0
+        Width = 77
+        Caption = 'SecLen: '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object comboboxSecLen: TComboBox
+        Left = 77
+        Height = 33
+        Top = 0
+        Width = 113
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          '128'
+          '256'
+          '512'
+          '1024'
+          '2048'
+          '4096'
+        )
+        Style = csDropDownList
+        TabOrder = 0
+        Text = '128'
+      end
+    end
+    object panelTracks: TPanel
+      Left = 202
+      Height = 33
+      Top = 4
+      Width = 146
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 33
+      ClientWidth = 146
+      TabOrder = 2
+      object labelTracks: TLabel
+        Left = 0
+        Height = 33
+        Top = 0
+        Width = 65
+        Caption = 'Tracks: '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editTracks: TEdit
+        Left = 65
+        Height = 33
+        Top = 0
+        Width = 81
+        NumbersOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+    end
+    object panelSecTrk: TPanel
+      Left = 356
+      Height = 33
+      Top = 4
+      Width = 153
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 33
+      ClientWidth = 153
+      TabOrder = 3
+      object labelSecTrk: TLabel
+        Left = 0
+        Height = 33
+        Top = 0
+        Width = 73
+        Caption = 'Sec/Trk: '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editSecTrk: TEdit
+        Left = 73
+        Height = 33
+        Top = 0
+        Width = 80
+        NumbersOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+    end
+    object panelBlockSize: TPanel
+      Left = 4
+      Height = 32
+      Top = 41
+      Width = 190
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 32
+      ClientWidth = 190
+      TabOrder = 4
+      object labelBlockSize: TLabel
+        Left = 0
+        Height = 32
+        Top = 0
+        Width = 89
+        Caption = 'Blocksize: '
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object comboboxBlockSize: TComboBox
+        Left = 89
+        Height = 32
+        Top = 0
+        Width = 101
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          '512'
+          '1024'
+          '2048'
+          '4096'
+          '8192'
+          '16384'
+        )
+        Style = csDropDownList
+        TabOrder = 0
+        Text = '512'
+      end
+    end
+    object panelMaxDir: TPanel
+      Left = 202
+      Height = 32
+      Top = 41
+      Width = 146
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 32
+      ClientWidth = 146
+      TabOrder = 5
+      object labelMaxDir: TLabel
+        Left = 0
+        Height = 32
+        Top = 0
+        Width = 61
+        Caption = 'MaxDir:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editMaxDir: TEdit
+        Left = 61
+        Height = 32
+        Top = 0
+        Width = 85
+        NumbersOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+    end
+    object panelBootTrk: TPanel
+      Left = 356
+      Height = 32
+      Top = 41
+      Width = 153
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 32
+      ClientWidth = 153
+      TabOrder = 0
+      object labelBootTrk: TLabel
+        Left = 0
+        Height = 32
+        Top = 0
+        Width = 69
+        Caption = 'BootTrk:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editBootTrk: TEdit
+        Left = 69
+        Height = 32
+        Top = 0
+        Width = 84
+        NumbersOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+    end
+  end
+  object panelStartCalc: TPanel
+    Left = 0
+    Height = 49
+    Top = 77
+    Width = 513
+    Align = alClient
+    AutoSize = True
+    ChildSizing.TopBottomSpacing = 8
+    ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+    ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ClientHeight = 49
+    ClientWidth = 513
+    TabOrder = 1
+    object buttonCalculate: TButton
+      Left = 183
+      Height = 32
+      Top = 9
+      Width = 148
+      Caption = '    Calculate    '
+      TabOrder = 0
+      OnClick = buttonCalculateClick
+    end
+  end
+  object panelDpbValues: TPanel
+    Left = 0
+    Height = 140
+    Top = 126
+    Width = 513
+    Align = alBottom
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.LeftRightSpacing = 4
+    ChildSizing.TopBottomSpacing = 4
+    ChildSizing.HorizontalSpacing = 8
+    ChildSizing.VerticalSpacing = 4
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 3
+    ClientHeight = 140
+    ClientWidth = 513
+    TabOrder = 2
+    object panelSpt: TPanel
+      Left = 4
+      Height = 30
+      Top = 4
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 0
+      object labelSpt: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'SPT:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editSpt: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelBsh: TPanel
+      Left = 175
+      Height = 30
+      Top = 4
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 1
+      object labelBsh: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'BSH:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editBsh: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelBlm: TPanel
+      Left = 346
+      Height = 30
+      Top = 4
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 2
+      object labelBlm: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'BLM:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editBlm: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelExm: TPanel
+      Left = 4
+      Height = 30
+      Top = 38
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 3
+      object labelExm: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'EXM:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editExm: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelDsm: TPanel
+      Left = 175
+      Height = 30
+      Top = 38
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 4
+      object labelDsm: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'DSM:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editDsm: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelDrm: TPanel
+      Left = 346
+      Height = 30
+      Top = 38
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 5
+      object labelDrm: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'DRM:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editDrm: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelAl0: TPanel
+      Left = 4
+      Height = 30
+      Top = 72
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 6
+      object labelAl0: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'AL0:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editAl0: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelAl1: TPanel
+      Left = 175
+      Height = 30
+      Top = 72
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 7
+      object labelAl1: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'AL1:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editAL1: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelCks: TPanel
+      Left = 346
+      Height = 30
+      Top = 72
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 8
+      object labelCks: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'CKS:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editCks: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelOff: TPanel
+      Left = 4
+      Height = 30
+      Top = 106
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 9
+      object labelOff: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'OFF:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editOff: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelPsh: TPanel
+      Left = 175
+      Height = 30
+      Top = 106
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 10
+      object labelPsh: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'PSH:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editPsh: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object panelPhm: TPanel
+      Left = 346
+      Height = 30
+      Top = 106
+      Width = 163
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 163
+      TabOrder = 11
+      object labelPhm: TLabel
+        Left = 0
+        Height = 30
+        Top = 0
+        Width = 58
+        Caption = 'PHM:'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object editPhm: TEdit
+        Left = 58
+        Height = 30
+        Top = 0
+        Width = 105
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 21
+    Top = 266
+    Width = 513
+    Panels = <    
+      item
+        Alignment = taCenter
+        Text = '(c)  Uwe Merker  2024'
+        Width = 250
+      end    
+      item
+        Alignment = taCenter
+        Text = 'Gnu General Public License v3'
+        Width = 100
+      end>
+    SimplePanel = False
+    SizeGrip = False
+  end
+end

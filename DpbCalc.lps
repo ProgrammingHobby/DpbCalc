@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="GTK2-Release_32bit">
+      <SessionMatrixOptions Count="5">
+        <Item1 ID="441771895400" Modes="Default,GTK2-Debug_32bit,GTK2-Debug_64bit,MSW-Debug_32bit,MSW-Debug_64bit" Value="-d_DEBUG_"/>
+        <Item2 ID="501760803227" Modes="GTK2-Release_32bit,GTK2-Release_64bit,MSW-Release_32bit,MSW-Release_64bit" Value="-d_RELEASE_"/>
+        <Item3 ID="003409805225" Modes="MSW-Release_64bit,Default,GTK2-Debug_32bit,GTK2-Release_32bit,GTK2-Debug_64bit,GTK2-Release_64bit,MSW-Debug_32bit,MSW-Release_32bit,MSW-Debug_64bit" Value="-dUseCThreads"/>
+        <Item4 ID="995549449274" Modes="GTK2-Debug_32bit,GTK2-Release_32bit,GTK2-Debug_64bit,GTK2-Release_64bit" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
+        <Item5 ID="483781318124" Modes="MSW-Release_64bit,MSW-Debug_32bit,MSW-Release_32bit,MSW-Debug_64bit" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+      </SessionMatrixOptions>
+    </BuildModes>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="DpbCalc.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Sources/dpb_calc.lfm"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Sources/dpb_calc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formDpbCalc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Dpb_Calc"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="118"/>
+        <CursorPos Y="147"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="dpb_calc.pas"/>
+        <ComponentName Value="formDpbCalc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Dpb_Calc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="76"/>
+        <CursorPos X="84" Y="76"/>
+        <UsageCount Value="20"/>
+      </Unit3>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="Sources/dpb_calc.pas"/>
+        <Caret Line="3" Column="3" TopLine="19"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Sources/dpb_calc.pas"/>
+        <Caret Line="229" TopLine="186"/>
+      </Position2>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
